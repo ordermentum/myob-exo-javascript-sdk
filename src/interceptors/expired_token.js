@@ -22,7 +22,7 @@ used in the call and returns the refreshed token as a string. */
 
       return client.get('/token').then((token) => {
         config.headers.Authorization = `Bearer ${token}`;
-        client.callback({ access_token: token });
+        client.callback(token);
 
         return instance(config);
       }).catch((e) => {

@@ -12,7 +12,7 @@ function createClient({
   username,
   password,
   timeout = 3000,
-  apiBase = 'http://exo.api.myob.com/',
+  apiBase = 'https://exo.api.myob.com/',
  }) {
   const client = new Client({
     clientId,

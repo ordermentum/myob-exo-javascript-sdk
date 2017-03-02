@@ -8,7 +8,7 @@ export default class Client {
   constructor({ clientId,
                 secret,
                 token = { }, logger, callback = () => {}, username, password,
-                timeout = 5000, apiBase = 'http://exo.api.myob.com/' }) {
+                timeout = 5000, apiBase = 'https://exo.api.myob.com/' }) {
     this.apiBase = apiBase;
     this.token = token;
     this.logger = logger;
