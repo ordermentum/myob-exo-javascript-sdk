@@ -17,8 +17,10 @@ export default class Client {
     this.username = username;
     this.password = password;
     this.clientId = clientId;
+
     // FIXME: in case of exo need to find where this secret is being
     // used as we don't authenticate via oauth...
+
     this.secret = secret;
     this.timeout = timeout;
     this.callback = callback;
@@ -41,12 +43,21 @@ export default class Client {
   }
 
   getHeaders() {
+    // API Docs: http://developer.myob.com/api/exo/exo-api-overview/authentication/
+    // Format looks to be:
+    // {
+      // Authorization: `Bearer ${this.token.access_token}`,
+      // x-myobapi-key: this.clientId,
+      // x-myobapi-exotoken: `${token}`
+    // }
+    // Confirm whether or not this needs to change
+    // the api-exotoken can be found in the e-mail.
+    // the api-key is on my.myob.com under Adam's account
     const headers = {
-      'x-myobapi-cftoken': this.getUserToken(),
+      'x-myobapi-exotoken': this.getUserToken(),
       'x-myobapi-key': this.clientId,
-      'x-myobapi-version': 'v2',
+      Authorization: `Basic ${this.token.access_token}`,
       'User-Agent': `Ordermentum MYOB Exo Client ${pack.version}`,
-      Authorization: `Bearer ${this.token.access_token}`,
     };
 
     return headers;
