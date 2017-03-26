@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 
+import NULL_LOGGER from 'null-logger';
 import Client from './client';
-import NULL_LOGGER from './logger';
 import resources from './resources';
 
 function createClient({
