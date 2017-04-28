@@ -1,7 +1,7 @@
 # myob-exo-javascript-sdk
 [![Build Status](https://travis-ci.org/ordermentum/myob-exo-javascript-sdk.svg?branch=master)](https://travis-ci.org/ordermentum/myob-exo-javascript-sdk)
 
-Myob Exo API Javascript SDK (unofficial)
+MYOB EXO API Javascript SDK (unofficial)
 
-see `examples/` on how to use the SDK.
+For details about the API visit http://developer.myob.com/api/exo/exo-api-overview/
 
