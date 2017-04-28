@@ -1,4 +1,4 @@
-# myob-exo-javascript-sdk
+# MYOB EXO Javascript / Node.js SDK
 [![Build Status](https://travis-ci.org/ordermentum/myob-exo-javascript-sdk.svg?branch=master)](https://travis-ci.org/ordermentum/myob-exo-javascript-sdk)
 [![npm version](https://badge.fury.io/js/myob-exo.svg)](https://badge.fury.io/js/myob-exo)
 [![Build Status](https://travis-ci.org/ordermentum/myob-exo-javascript-sdk.svg?branch=master)](https://travis-ci.org/ordermentum/myob-exo-javascript-sdk)
