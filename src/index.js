@@ -28,6 +28,7 @@ function createClient({
     client,
     salesorder: resources.salesorder(client),
     stockitem: resources.stockitem(client),
+    stock: resource.stock(client),
     token: resources.token(client),
   };
 }

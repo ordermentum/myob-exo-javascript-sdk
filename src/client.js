@@ -52,12 +52,14 @@ export default class Client {
     // }
     // Confirm whether or not this needs to change
     // the api-exotoken can be found in the e-mail.
-    // the api-key is on my.myob.com under Adam's account
+    // the api-key is on my.myob.com under Adam's account.
+    // Need to specify application/json to avoid XML returns.
     const headers = {
       'x-myobapi-exotoken': this.getUserToken(),
       'x-myobapi-key': this.clientId,
       Authorization: `Basic ${this.token.access_token}`,
       'User-Agent': `Ordermentum MYOB Exo Client ${pack.version}`,
+      Accept: 'application/json',
     };
 
     return headers;
