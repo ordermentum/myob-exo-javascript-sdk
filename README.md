@@ -11,3 +11,13 @@ MYOB EXO API Javascript SDK (unofficial)
 
 For details about the API visit http://developer.myob.com/api/exo/exo-api-overview/
 
+
+### Currently Support Resources
+
+* salesorder
+* stock
+* stockitem
+
+### Usage
+
+See `examples/`
