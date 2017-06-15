@@ -7,7 +7,6 @@ import resources from './resources';
 function createClient({
   clientId,
   secret,
-  token = {},
   logger = NULL_LOGGER,
   username,
   password,
@@ -19,7 +18,6 @@ function createClient({
     username,
     password,
     secret,
-    token,
     apiBase,
     timeout,
     logger });
@@ -28,7 +26,7 @@ function createClient({
     client,
     salesorder: resources.salesorder(client),
     stockitem: resources.stockitem(client),
-    stock: resource.stock(client),
+    stock: resources.stock(client),
     token: resources.token(client),
   };
 }

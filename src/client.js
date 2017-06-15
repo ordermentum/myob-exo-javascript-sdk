@@ -7,10 +7,9 @@ const pack = require('../package');
 export default class Client {
   constructor({ clientId,
                 secret,
-                token = { }, logger, callback = () => {}, username, password,
+                logger, callback = () => {}, username, password,
                 timeout = 5000, apiBase = 'https://exo.api.myob.com/' }) {
     this.apiBase = apiBase;
-    this.token = token;
     this.logger = logger;
     this.callback = callback;
     this.adapter = axios;
@@ -46,7 +45,7 @@ export default class Client {
     // API Docs: http://developer.myob.com/api/exo/exo-api-overview/authentication/
     // Format looks to be:
     // {
-      // Authorization: `Bearer ${this.token.access_token}`,
+      // Authorization: `Bearer ${username:password}`,
       // x-myobapi-key: this.clientId,
       // x-myobapi-exotoken: `${token}`
     // }
@@ -55,11 +54,12 @@ export default class Client {
     // the api-key is on my.myob.com under Adam's account.
     // Need to specify application/json to avoid XML returns.
     const headers = {
-      'x-myobapi-exotoken': this.getUserToken(),
-      'x-myobapi-key': this.clientId,
-      Authorization: `Basic ${this.token.access_token}`,
+      'x-myobapi-exotoken': this.clientId,
+      'x-myobapi-key': this.secret,
+      Authorization: `Basic ${this.getUserToken()}`,
       'User-Agent': `Ordermentum MYOB Exo Client ${pack.version}`,
       Accept: 'application/json',
+      'Content-Type': 'application/json',
     };
 
     return headers;
