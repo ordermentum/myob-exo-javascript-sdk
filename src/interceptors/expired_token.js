@@ -9,7 +9,7 @@ export default function expiredToken(instance, client, retries = 5) {
       return Promise.reject(error);
     }
 
-    config.expiredTokenRetry = config.expiredTokenRetry || 0;
+    config.expiredTokenRetry = config.expiredTokenRetry || 3;
 
     const accessDenied = error.data && error.data.Message && error.data.Message === 'Access denied';
     const canTry = (!config.expiredTokenRetry || config.expiredTokenRetry < retries);
